@@ -86,7 +86,7 @@ export default function ContactForm() {
           rows={4}
           value={values.message}
           onChange={(e) => set("message")(e.target.value)}
-          className="w-full rounded-xl border border-ink/12 bg-white/70 px-4 py-3.5 text-base text-ink placeholder:text-ink-faint/70 transition-all focus:border-gold-500 focus:bg-white focus:shadow-[0_0_0_4px_var(--color-gold-100)]"
+          className="w-full rounded-xl border border-ink/12 bg-ivory-deep/40 px-4 py-3.5 text-base text-ink placeholder:text-ink-faint/70 transition-all focus:border-gold-500 focus:bg-white focus:shadow-[0_0_0_4px_var(--color-gold-100)]"
           placeholder="Tell us a little about what you're looking to achieve"
         />
       </div>

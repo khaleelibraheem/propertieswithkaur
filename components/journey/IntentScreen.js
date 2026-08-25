@@ -40,7 +40,7 @@ export default function IntentScreen({ onSelect }) {
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
-              className="group flex flex-col gap-4 rounded-3xl border border-ink/10 bg-white p-6 text-left transition-colors duration-200 hover:border-ink/25"
+              className="group flex flex-col gap-4 rounded-3xl border border-ink/10 bg-ivory-deep/60 p-6 text-left transition-colors duration-200 hover:border-ink/25 hover:bg-ivory-deep"
             >
               <span className={`flex h-11 w-11 items-center justify-center rounded-full ${TONES[option.value]}`}>
                 <Icon size={20} strokeWidth={1.7} />

@@ -27,13 +27,13 @@ export default function SelectCard({
         "group flex w-full items-center justify-between gap-4 rounded-2xl border px-5 py-4 text-left transition-colors duration-200 ease-out",
         selected
           ? "border-ink bg-ink text-ivory"
-          : "border-ink/12 bg-white/70 text-ink hover:border-ink/30 hover:bg-white",
-        disabled && "cursor-not-allowed opacity-40 hover:border-ink/12 hover:bg-white/70",
+          : "border-ink/12 bg-ivory-deep/60 text-ink hover:border-ink/30 hover:bg-ivory-deep",
+        disabled && "cursor-not-allowed opacity-40 hover:border-ink/12 hover:bg-ivory-deep/60",
         className
       )}
     >
       <span>
-        <span className="block text-[0.95rem] font-medium leading-snug sm:text-base">
+        <span className="font-display block text-base leading-snug font-medium sm:text-lg">
           {label}
         </span>
         {description && (

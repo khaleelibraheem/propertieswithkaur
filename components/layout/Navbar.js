@@ -12,18 +12,18 @@ import Button from "../ui/Button";
 
 const PILL_LINKS = [
   { href: "/", type: "home", label: "Home" },
-  { href: "/buy", type: "buy", label: "Buy" },
-  { href: "/invest", type: "invest", label: "Invest" },
-  { href: "/sell", type: "sell", label: "Sell" },
+  { href: "/journey?type=buy", type: "buy", label: "Buy" },
+  { href: "/journey?type=invest", type: "invest", label: "Invest" },
+  { href: "/journey?type=sell", type: "sell", label: "Sell" },
 ];
 
 // Shown in the full-screen menu only below the lg breakpoint, where the
 // pill nav (which already covers these) is hidden.
 const PRIMARY_LINKS = [
   { href: "/", type: "home", label: "Home" },
-  { href: "/buy", type: "buy", label: "Buy" },
-  { href: "/invest", type: "invest", label: "Invest" },
-  { href: "/sell", type: "sell", label: "Sell" },
+  { href: "/journey?type=buy", type: "buy", label: "Buy" },
+  { href: "/journey?type=invest", type: "invest", label: "Invest" },
+  { href: "/journey?type=sell", type: "sell", label: "Sell" },
 ];
 
 // Always shown in the full-screen menu, at every breakpoint.

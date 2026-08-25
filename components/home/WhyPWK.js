@@ -1,6 +1,3 @@
-"use client";
-
-import { Target, LineChart, Gem, Handshake } from "lucide-react";
 import Container from "../ui/Container";
 import SectionHeading from "../ui/SectionHeading";
 import FeatureCard from "../ui/FeatureCard";
@@ -8,25 +5,25 @@ import Reveal from "../ui/Reveal";
 
 const FEATURES = [
   {
-    icon: Target,
+    numeral: "I",
     tone: "terracotta",
     title: "Personal strategy",
     description: "Recommendations built around what you actually need, one client at a time.",
   },
   {
-    icon: LineChart,
+    numeral: "II",
     tone: "emerald",
     title: "Market intelligence",
     description: "Understanding value beyond marketing material, so decisions hold up over time.",
   },
   {
-    icon: Gem,
+    numeral: "III",
     tone: "gold",
     title: "Curated opportunities",
     description: "Fewer options, each one genuinely suited to what you're trying to achieve.",
   },
   {
-    icon: Handshake,
+    numeral: "IV",
     tone: "purple",
     title: "Long-term relationship",
     description: "Advice that continues well beyond a single transaction.",

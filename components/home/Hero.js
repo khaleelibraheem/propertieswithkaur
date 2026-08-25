@@ -11,9 +11,9 @@ import GradientWash from "../ui/GradientWash";
 const HEADLINE_LINES = ["Your property", "journey starts", "with you."];
 
 const PATHS = [
-  { href: "/buy", label: "Buy" },
-  { href: "/invest", label: "Invest" },
-  { href: "/sell", label: "Sell" },
+  { href: "/journey?type=buy", label: "Buy" },
+  { href: "/journey?type=invest", label: "Invest" },
+  { href: "/journey?type=sell", label: "Sell" },
 ];
 
 export default function Hero() {

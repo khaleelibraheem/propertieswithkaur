@@ -34,7 +34,7 @@ export default function TextField({
         onChange={(e) => onChange(e.target.value)}
         aria-invalid={Boolean(error)}
         className={clsx(
-          "w-full rounded-xl border bg-white/70 px-4 py-3.5 text-base text-ink placeholder:text-ink-faint/70 transition-all duration-200 focus:bg-white focus:shadow-[0_0_0_4px_var(--color-gold-100)]",
+          "w-full rounded-xl border bg-ivory-deep/40 px-4 py-3.5 text-base text-ink placeholder:text-ink-faint/70 transition-all duration-200 focus:bg-white focus:shadow-[0_0_0_4px_var(--color-gold-100)]",
           error ? "border-red-400" : "border-ink/12 focus:border-gold-500"
         )}
       />

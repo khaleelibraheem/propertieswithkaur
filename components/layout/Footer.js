@@ -7,9 +7,9 @@ const COLUMNS = [
   {
     title: "Journey",
     links: [
-      { href: "/buy", label: "Buy" },
-      { href: "/invest", label: "Invest" },
-      { href: "/sell", label: "Sell" },
+      { href: "/journey?type=buy", label: "Buy" },
+      { href: "/journey?type=invest", label: "Invest" },
+      { href: "/journey?type=sell", label: "Sell" },
     ],
   },
   {

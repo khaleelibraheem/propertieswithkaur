@@ -222,26 +222,27 @@ export default function JourneyClient() {
   const journeyIntro = type && stepIndex === 0 && !completed ? JOURNEYS[type].intro : null;
 
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-ivory py-14 sm:py-20">
+    <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-ivory-deep py-14 sm:py-20">
       {!type && <GradientWash />}
       <Container size="narrow" className="relative">
         {showBack && (
           <button
             type="button"
             onClick={handleBack}
-            className="mb-8 flex items-center gap-1.5 text-sm text-ink-faint transition-colors hover:text-ink"
+            className="mb-6 flex items-center gap-1.5 text-sm text-ink-faint transition-colors hover:text-ink"
           >
             <ChevronLeft size={16} /> Back
           </button>
         )}
 
-        {showProgress && (
-          <div className="mb-10">
-            <ProgressBar step={stepIndex + 1} total={totalSteps} />
-          </div>
-        )}
+        <div className="rounded-[32px] border border-ink/8 bg-white p-6 shadow-[0_30px_80px_-40px_rgba(21,19,15,0.3)] sm:p-10 lg:p-14">
+          {showProgress && (
+            <div className="mb-10">
+              <ProgressBar step={stepIndex + 1} total={totalSteps} />
+            </div>
+          )}
 
-        <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence mode="wait" initial={false}>
           {!type && (
             <IntentScreen key="intent" onSelect={handleIntentSelect} />
           )}
@@ -342,7 +343,8 @@ export default function JourneyClient() {
               )}
             </motion.div>
           )}
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
       </Container>
     </section>
   );
