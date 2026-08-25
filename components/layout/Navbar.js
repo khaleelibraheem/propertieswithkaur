@@ -286,14 +286,11 @@ export default function Navbar() {
                 Contact
               </Button>
             </div>
-            <Button
-              href="/journey"
-              variant="gold"
-              size="sm"
-              className="hidden lg:inline-flex"
-            >
-              Find what&apos;s right for me
-            </Button>
+            <div className="hidden lg:inline-flex">
+              <Button href="/journey" variant="gold" size="sm">
+                Find what&apos;s right for me
+              </Button>
+            </div>
 
             <button
               type="button"
