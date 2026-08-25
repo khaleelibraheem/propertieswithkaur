@@ -88,9 +88,13 @@ function FullMenu({ open, onClose, activeType }) {
           className="fixed inset-0 z-[60] flex flex-col bg-ink text-ivory"
         >
           <Container className="flex h-20 shrink-0 items-center justify-between">
-            <span className="text-sm font-medium tracking-wide text-ivory/70">
-              Properties with Kaur
-            </span>
+            <Image
+              src="/logo-dark.png"
+              alt="Properties with Kaur"
+              width={933}
+              height={636}
+              className="h-11 w-auto"
+            />
             <button
               type="button"
               onClick={onClose}
