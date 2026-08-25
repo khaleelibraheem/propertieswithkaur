@@ -20,10 +20,25 @@ const sizes = {
   lg: "text-sm px-8 py-4",
 };
 
-const motionProps = {
-  whileHover: { scale: 1.025, y: -1 },
-  whileTap: { scale: 0.97 },
-  transition: { type: "spring", stiffness: 420, damping: 26 },
+// Motion weight matches the button's importance: the primary gold action
+// gets a confident lift, secondary actions get a smaller nudge, and ghost
+// links (no visible container) don't move at all — only their color does.
+const motionByVariant = {
+  gold: {
+    whileHover: { scale: 1.03, y: -2 },
+    whileTap: { scale: 0.97 },
+    transition: { type: "spring", stiffness: 400, damping: 22 },
+  },
+  dark: {
+    whileHover: { y: -1 },
+    whileTap: { scale: 0.98 },
+    transition: { type: "spring", stiffness: 500, damping: 30 },
+  },
+  outline: {
+    whileTap: { scale: 0.98 },
+    transition: { type: "spring", stiffness: 500, damping: 30 },
+  },
+  ghost: {},
 };
 
 export default function Button({
@@ -57,6 +72,8 @@ export default function Button({
       )}
     </>
   );
+
+  const motionProps = motionByVariant[variant] || motionByVariant.outline;
 
   if (href) {
     return (

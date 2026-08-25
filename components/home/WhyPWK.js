@@ -11,7 +11,7 @@ const FEATURES = [
     icon: Target,
     tone: "terracotta",
     title: "Personal strategy",
-    description: "Recommendations based on your individual requirements, not a generic checklist.",
+    description: "Recommendations built around what you actually need, one client at a time.",
   },
   {
     icon: LineChart,

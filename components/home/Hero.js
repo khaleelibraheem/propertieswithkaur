@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Home, TrendingUp, KeyRound, Lightbulb } from "lucide-react";
+import { ArrowUpRight, Lightbulb } from "lucide-react";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import GradientWash from "../ui/GradientWash";
@@ -11,9 +11,9 @@ import GradientWash from "../ui/GradientWash";
 const HEADLINE_LINES = ["Your property", "journey starts", "with you."];
 
 const PATHS = [
-  { href: "/buy", icon: Home, label: "Buy" },
-  { href: "/invest", icon: TrendingUp, label: "Invest" },
-  { href: "/sell", icon: KeyRound, label: "Sell" },
+  { href: "/buy", label: "Buy" },
+  { href: "/invest", label: "Invest" },
+  { href: "/sell", label: "Sell" },
 ];
 
 export default function Hero() {
@@ -98,24 +98,6 @@ export default function Hero() {
               Dedicated to understanding you first, then finding the right
               property strategy.
             </p>
-          </div>
-
-          <div className="absolute bottom-5 left-5 rounded-2xl bg-ivory/95 p-4 shadow-lg sm:bottom-7 sm:left-7">
-            <p className="text-[0.65rem] font-semibold tracking-wide text-ink-faint uppercase">
-              Start with
-            </p>
-            <div className="mt-2.5 flex items-center gap-2">
-              {PATHS.map((path) => (
-                <Link
-                  key={path.href}
-                  href={path.href}
-                  aria-label={`I want to ${path.label.toLowerCase()}`}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-ivory transition-transform duration-200 hover:scale-110"
-                >
-                  <path.icon size={15} strokeWidth={1.8} />
-                </Link>
-              ))}
-            </div>
           </div>
 
           <Link

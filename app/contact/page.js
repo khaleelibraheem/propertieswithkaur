@@ -3,7 +3,6 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ContactForm from "@/components/contact/ContactForm";
 import Reveal from "@/components/ui/Reveal";
-import GradientWash from "@/components/ui/GradientWash";
 
 export const metadata = {
   title: "Contact | Properties with Kaur",
@@ -11,16 +10,15 @@ export const metadata = {
 };
 
 const CHANNELS = [
-  { icon: MessageCircle, label: "WhatsApp", value: "Continue the conversation instantly", href: "https://wa.me/", tone: "bg-emerald-100 text-emerald-700" },
-  { icon: Phone, label: "Call", value: "Speak with our advisory team directly", href: "tel:", tone: "bg-terracotta-100 text-terracotta-700" },
-  { icon: Mail, label: "Email", value: "For detailed enquiries and documents", href: "mailto:hello@propertieswithkaur.com", tone: "bg-gold-100 text-gold-700" },
+  { icon: MessageCircle, label: "WhatsApp", value: "Fastest way to reach us, usually within the hour", href: "https://wa.me/" },
+  { icon: Phone, label: "Call", value: "Direct line to the advisory team", href: "tel:" },
+  { icon: Mail, label: "Email", value: "Best for documents and longer questions", href: "mailto:hello@propertieswithkaur.com" },
 ];
 
 export default function ContactPage() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
-      <GradientWash />
-      <Container className="relative">
+    <section className="py-20 sm:py-28">
+      <Container>
         <SectionHeading
           eyebrow="Get in touch"
           title="Book a private consultation."
@@ -33,19 +31,19 @@ export default function ContactPage() {
             <ContactForm />
           </Reveal>
 
-          <Reveal delay={0.1} className="space-y-4">
-            {CHANNELS.map((channel) => (
+          <Reveal delay={0.1} className="rounded-3xl border border-ink/10 bg-ivory-deep p-2">
+            {CHANNELS.map((channel, i) => (
               <a
                 key={channel.label}
                 href={channel.href}
-                className="group flex items-start gap-4 rounded-2xl border border-ink/10 bg-ivory-deep p-6 transition-all duration-200 hover:-translate-y-1 hover:border-ink/25"
+                className={`group flex items-center gap-4 rounded-2xl px-5 py-5 transition-colors duration-200 hover:bg-white ${
+                  i > 0 ? "border-t border-ink/8" : ""
+                }`}
               >
-                <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${channel.tone}`}>
-                  <channel.icon size={19} strokeWidth={1.7} />
-                </span>
-                <div>
+                <channel.icon size={20} strokeWidth={1.6} className="shrink-0 text-gold-700" />
+                <div className="flex-1">
                   <p className="font-display text-base font-medium text-ink">{channel.label}</p>
-                  <p className="mt-1 text-sm text-ink-soft">{channel.value}</p>
+                  <p className="mt-0.5 text-sm text-ink-soft">{channel.value}</p>
                 </div>
               </a>
             ))}

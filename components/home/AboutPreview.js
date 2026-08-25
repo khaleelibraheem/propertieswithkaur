@@ -1,14 +1,15 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
+import FounderMark from "../ui/FounderMark";
 
 export default function AboutPreview() {
   return (
     <section className="py-24 sm:py-32">
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="mx-auto flex aspect-[4/5] w-full max-w-sm items-center justify-center rounded-[28px] border border-ink/10 bg-ivory-deep">
-            <span className="font-display text-8xl font-medium text-gold-600">SK</span>
+          <Reveal className="mx-auto w-full max-w-sm">
+            <FounderMark />
           </Reveal>
 
           <Reveal delay={0.1}>

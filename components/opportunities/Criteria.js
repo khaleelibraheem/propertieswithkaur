@@ -1,42 +1,46 @@
 "use client";
 
-import { MapPin, TrendingUp, Wallet, ShieldCheck } from "lucide-react";
-import FeatureCard from "../ui/FeatureCard";
 import Reveal from "../ui/Reveal";
 
 const CRITERIA = [
   {
-    icon: MapPin,
-    tone: "terracotta",
+    number: "01",
     title: "Strategic location",
-    description: "Proximity to what actually drives demand, not just a map pin near a landmark.",
+    description: "Proximity to what actually drives demand rather than a map pin near a landmark.",
   },
   {
-    icon: TrendingUp,
-    tone: "emerald",
+    number: "02",
     title: "Future infrastructure",
-    description: "Documented, funded upgrades to an area, not speculation dressed up as insight.",
+    description: "Documented, funded upgrades to an area. Speculation doesn't count.",
   },
   {
-    icon: Wallet,
-    tone: "gold",
+    number: "03",
     title: "Entry pricing advantage",
-    description: "A price or payment structure that genuinely compares well to similar stock.",
+    description: "A price or payment structure that genuinely compares well against similar stock.",
   },
   {
-    icon: ShieldCheck,
-    tone: "purple",
+    number: "04",
     title: "Developer and supply",
-    description: "Track record, build quality and how limited the comparable supply really is.",
+    description: "Track record, build quality, and how limited the comparable supply really is.",
   },
 ];
 
 export default function Criteria() {
   return (
-    <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="mt-14 border-t border-ink/10">
       {CRITERIA.map((criterion, i) => (
-        <Reveal key={criterion.title} delay={i * 0.08}>
-          <FeatureCard {...criterion} />
+        <Reveal key={criterion.number} delay={i * 0.06}>
+          <div className="flex flex-col gap-2 border-b border-ink/10 py-7 sm:flex-row sm:items-baseline sm:gap-8">
+            <span className="font-display shrink-0 text-2xl text-gold-500/70 sm:w-16">
+              {criterion.number}
+            </span>
+            <div>
+              <h3 className="font-display text-xl font-medium text-ink">{criterion.title}</h3>
+              <p className="mt-1.5 max-w-xl text-[0.95rem] leading-relaxed text-ink-soft">
+                {criterion.description}
+              </p>
+            </div>
+          </div>
         </Reveal>
       ))}
     </div>
