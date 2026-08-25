@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-ivory: #faf8f4;
+  --color-ivory-deep: #f1ede3;
+  --color-ivory-line: #e6e0d2;
+
+  --color-ink: #15130f;
+  --color-ink-soft: #55503f;
+  --color-ink-faint: #8b8574;
+
+  --color-purple-950: #130a22;
+  --color-purple-900: #1c0e33;
+  --color-purple-800: #2b1147;
+  --color-purple-700: #3c1c5f;
+  --color-purple-600: #542a80;
+  --color-purple-100: #ece1f7;
+  --color-purple-050: #f6f0fb;
+
+  --color-gold-700: #9c6f1f;
+  --color-gold-600: #bd8a2a;
+  --color-gold-500: #d8a13a;
+  --color-gold-300: #ecc574;
+  --color-gold-100: #f9e9c6;
+
+  --color-terracotta-700: #a8441f;
+  --color-terracotta-600: #c25429;
+  --color-terracotta-500: #d9683a;
+  --color-terracotta-300: #eda47f;
+  --color-terracotta-100: #fbe3d5;
+
+  --color-emerald-700: #1f5346;
+  --color-emerald-600: #2f6f5e;
+  --color-emerald-500: #3f8975;
+  --color-emerald-100: #dceee8;
+
+  --font-display: var(--font-instrument);
+  --font-sans: var(--font-instrument);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: var(--color-ivory);
+  --color-ivory-deep: var(--color-ivory-deep);
+  --color-ivory-line: var(--color-ivory-line);
+
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-faint: var(--color-ink-faint);
+
+  --color-purple-950: var(--color-purple-950);
+  --color-purple-900: var(--color-purple-900);
+  --color-purple-800: var(--color-purple-800);
+  --color-purple-700: var(--color-purple-700);
+  --color-purple-600: var(--color-purple-600);
+  --color-purple-100: var(--color-purple-100);
+  --color-purple-050: var(--color-purple-050);
+
+  --color-gold-700: var(--color-gold-700);
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-100: var(--color-gold-100);
+
+  --color-terracotta-700: var(--color-terracotta-700);
+  --color-terracotta-600: var(--color-terracotta-600);
+  --color-terracotta-500: var(--color-terracotta-500);
+  --color-terracotta-300: var(--color-terracotta-300);
+  --color-terracotta-100: var(--color-terracotta-100);
+
+  --color-emerald-700: var(--color-emerald-700);
+  --color-emerald-600: var(--color-emerald-600);
+  --color-emerald-500: var(--color-emerald-500);
+  --color-emerald-100: var(--color-emerald-100);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-purple-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-600);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-130%) skewX(-12deg);
+  }
+  to {
+    transform: translateX(230%) skewX(-12deg);
+  }
+}
+
+@keyframes confetti-fall {
+  from {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(120px) rotate(240deg);
+    opacity: 0;
+  }
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.btn-shimmer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: shimmer 2.8s ease-in-out infinite;
 }
