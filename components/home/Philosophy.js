@@ -1,13 +1,15 @@
 import Container from "../ui/Container";
 import Reveal from "../ui/Reveal";
+import GradientWash from "../ui/GradientWash";
 
 export default function Philosophy() {
   return (
-    <section className="bg-ink py-24 sm:py-32">
-      <Container>
+    <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
+      <GradientWash variant="dark" />
+      <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <Reveal>
-            <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-gold-400 uppercase">
+            <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">
               Our philosophy
             </p>
             <h2 className="font-display text-4xl leading-[1.1] font-medium tracking-tight text-ivory sm:text-5xl lg:text-[3.2rem]">

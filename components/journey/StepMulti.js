@@ -2,7 +2,7 @@
 
 import SelectCard from "../ui/SelectCard";
 
-export default function StepMulti({ step, answers, onToggle }) {
+export default function StepMulti({ step, answers, onToggle, tone }) {
   const selected = answers[step.key] || [];
   const max = step.maxSelect || selected.length + 1;
 
@@ -23,6 +23,7 @@ export default function StepMulti({ step, answers, onToggle }) {
               selected={isSelected}
               disabled={disabled}
               onClick={() => onToggle(option.value)}
+              tone={tone}
             />
           );
         })}

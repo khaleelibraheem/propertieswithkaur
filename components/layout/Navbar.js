@@ -9,6 +9,7 @@ import { Menu, X, MessageCircle, ArrowUpRight } from "lucide-react";
 import clsx from "clsx";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
+import GradientWash from "../ui/GradientWash";
 
 const PILL_LINKS = [
   { href: "/", type: "home", label: "Home" },
@@ -85,9 +86,10 @@ function FullMenu({ open, onClose, activeType }) {
           animate={{ clipPath: "circle(150% at calc(100% - 2.5rem) 2.5rem)" }}
           exit={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
           transition={{ duration: 0.55, ease: [0.65, 0, 0.35, 1] }}
-          className="fixed inset-0 z-[60] flex flex-col bg-ink text-ivory"
+          className="fixed inset-0 z-[60] flex flex-col overflow-hidden bg-ink text-ivory"
         >
-          <Container className="flex h-20 shrink-0 items-center justify-between">
+          <GradientWash variant="dark" />
+          <Container className="relative flex h-20 shrink-0 items-center justify-between">
             <Image
               src="/logo-dark.png"
               alt="Properties with Kaur"
@@ -126,15 +128,15 @@ function FullMenu({ open, onClose, activeType }) {
                           className={clsx(
                             "font-display text-3xl font-medium tracking-tight transition-colors sm:text-4xl lg:text-5xl",
                             activeType === link.type
-                              ? "text-gold-400"
-                              : "text-ivory group-hover:text-gold-400",
+                              ? "text-gold-300"
+                              : "text-ivory group-hover:text-gold-300",
                           )}
                         >
                           {link.label}
                         </span>
                         <ArrowUpRight
                           size={24}
-                          className="shrink-0 text-ivory/30 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold-400"
+                          className="shrink-0 text-ivory/30 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold-300"
                         />
                       </Link>
                     </motion.div>
@@ -155,12 +157,12 @@ function FullMenu({ open, onClose, activeType }) {
                         onClick={onClose}
                         className="group flex items-center justify-between py-3 sm:py-4"
                       >
-                        <span className="font-display text-3xl font-medium tracking-tight text-ivory transition-colors group-hover:text-gold-400 sm:text-4xl lg:text-5xl">
+                        <span className="font-display text-3xl font-medium tracking-tight text-ivory transition-colors group-hover:text-gold-300 sm:text-4xl lg:text-5xl">
                           {link.label}
                         </span>
                         <ArrowUpRight
                           size={24}
-                          className="shrink-0 text-ivory/30 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold-400"
+                          className="shrink-0 text-ivory/30 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold-300"
                         />
                       </Link>
                     </motion.div>
@@ -171,9 +173,10 @@ function FullMenu({ open, onClose, activeType }) {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.35 }}
-                  className="hidden rounded-3xl border border-ivory/10 bg-ivory/[0.04] p-10 lg:block"
+                  className="relative hidden overflow-hidden rounded-3xl border border-ivory/10 bg-ivory/[0.04] p-10 lg:block"
                 >
-                  <p className="text-xs font-semibold tracking-[0.2em] text-gold-400 uppercase">
+                  <p className="flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">
+                    <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-purple-400" />
                     Our philosophy
                   </p>
                   <p className="mt-5 font-display text-2xl leading-snug text-ivory">

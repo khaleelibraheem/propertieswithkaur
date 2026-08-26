@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import clsx from "clsx";
 import { Check } from "lucide-react";
 
+const DEFAULT_TONE = { badge: "border-gold-500 bg-gold-500", check: "text-ink" };
+
 export default function SelectCard({
   label,
   description,
@@ -11,8 +13,10 @@ export default function SelectCard({
   onClick,
   multi = false,
   disabled = false,
+  tone,
   className,
 }) {
+  const activeTone = tone || DEFAULT_TONE;
   return (
     <motion.button
       type="button"
@@ -53,7 +57,7 @@ export default function SelectCard({
           "flex h-6 w-6 shrink-0 items-center justify-center border transition-all duration-200",
           multi ? "rounded-md" : "rounded-full",
           selected
-            ? "border-gold-500 bg-gold-500 text-ink"
+            ? clsx(activeTone.badge, activeTone.check)
             : "border-ink/20 text-transparent group-hover:border-ink/40"
         )}
       >

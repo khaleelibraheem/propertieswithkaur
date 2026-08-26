@@ -3,7 +3,7 @@
 import SelectCard from "../ui/SelectCard";
 import TextField from "../ui/TextField";
 
-export default function StepSingle({ step, answers, onSelect, onRevealChange }) {
+export default function StepSingle({ step, answers, onSelect, onRevealChange, tone }) {
   const selectedValue = answers[step.key];
   const selectedOption = step.options.find((o) => o.value === selectedValue);
 
@@ -17,6 +17,7 @@ export default function StepSingle({ step, answers, onSelect, onRevealChange }) 
             description={option.description}
             selected={selectedValue === option.value}
             onClick={() => onSelect(option)}
+            tone={tone}
           />
         ))}
       </div>

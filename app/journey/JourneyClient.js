@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft } from "lucide-react";
+import clsx from "clsx";
 import Container from "@/components/ui/Container";
 import ProgressBar from "@/components/ui/ProgressBar";
 import Button from "@/components/ui/Button";
@@ -14,11 +15,12 @@ import StepMulti from "@/components/journey/StepMulti";
 import StepTextInput from "@/components/journey/StepTextInput";
 import StepContactForm from "@/components/journey/StepContactForm";
 import StepFinal from "@/components/journey/StepFinal";
-import { JOURNEYS, getJourneySteps } from "@/lib/journeyConfig";
+import { JOURNEYS, JOURNEY_TONES, getJourneySteps } from "@/lib/journeyConfig";
 import { buildSummaryLine, buildInternalProfile } from "@/lib/clientProfile";
 
 const STORAGE_KEY = "pwk-journey-v1";
 const AUTO_ADVANCE_DELAY = 380;
+const NOT_DECIDED_VALUE = "not-decided";
 
 function isStepValid(step, answers) {
   if (!step) return false;
@@ -114,6 +116,7 @@ export default function JourneyClient() {
   const totalSteps = steps.length;
   const currentStep = type ? steps[stepIndex] : null;
   const valid = isStepValid(currentStep, answers);
+  const tone = type ? JOURNEY_TONES[type] : null;
 
   const goTo = useCallback((index, dir) => {
     setDirection(dir);
@@ -176,11 +179,18 @@ export default function JourneyClient() {
     setAnswers((prev) => {
       const current = prev[step.key] || [];
       const max = step.maxSelect || Infinity;
-      const next = current.includes(value)
-        ? current.filter((v) => v !== value)
-        : current.length < max
-        ? [...current, value]
-        : current;
+
+      if (value === NOT_DECIDED_VALUE) {
+        const next = current.includes(NOT_DECIDED_VALUE) ? [] : [NOT_DECIDED_VALUE];
+        return { ...prev, [step.key]: next };
+      }
+
+      const withoutNotDecided = current.filter((v) => v !== NOT_DECIDED_VALUE);
+      const next = withoutNotDecided.includes(value)
+        ? withoutNotDecided.filter((v) => v !== value)
+        : withoutNotDecided.length < max
+        ? [...withoutNotDecided, value]
+        : withoutNotDecided;
       return { ...prev, [step.key]: next };
     });
   };
@@ -238,7 +248,7 @@ export default function JourneyClient() {
         <div className="rounded-[32px] border border-ink/8 bg-white p-6 shadow-[0_30px_80px_-40px_rgba(21,19,15,0.3)] sm:p-10 lg:p-14">
           {showProgress && (
             <div className="mb-10">
-              <ProgressBar step={stepIndex + 1} total={totalSteps} />
+              <ProgressBar step={stepIndex + 1} total={totalSteps} tone={tone} />
             </div>
           )}
 
@@ -267,7 +277,7 @@ export default function JourneyClient() {
             >
               {journeyIntro && (
                 <div className="mb-8">
-                  <p className="text-xs font-semibold tracking-[0.2em] text-gold-700 uppercase">
+                  <p className={clsx("text-xs font-semibold tracking-[0.2em] uppercase", tone?.text || "text-gold-700")}>
                     {journeyIntro.eyebrow}
                   </p>
                   <h1 className="mt-3 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
@@ -298,6 +308,7 @@ export default function JourneyClient() {
                     answers={answers}
                     onSelect={(option) => handleSingleSelect(currentStep, option)}
                     onRevealChange={setAnswer}
+                    tone={tone}
                   />
                 )}
                 {currentStep.type === "multi" && (
@@ -305,6 +316,7 @@ export default function JourneyClient() {
                     step={currentStep}
                     answers={answers}
                     onToggle={(value) => handleMultiToggle(currentStep, value)}
+                    tone={tone}
                   />
                 )}
                 {currentStep.type === "text" && (
