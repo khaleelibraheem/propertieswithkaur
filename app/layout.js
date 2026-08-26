@@ -1,20 +1,19 @@
 import { Suspense } from "react";
-import { Instrument_Sans, Fraunces } from "next/font/google";
+import { Hanken_Grotesk, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const instrument = Instrument_Sans({
-  variable: "--font-instrument",
+const hankenGrotesk = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
   weight: "variable",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
   weight: "variable",
-  axes: ["opsz", "SOFT"],
   style: ["normal"],
 });
 
@@ -26,7 +25,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${instrument.variable} ${fraunces.variable} h-full`}>
+    <html lang="en" className={`${hankenGrotesk.variable} ${bricolageGrotesque.variable} h-full`}>
       <body className="flex min-h-full flex-col overflow-x-hidden antialiased">
         <Suspense fallback={<div className="h-20" />}>
           <Navbar />

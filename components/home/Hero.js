@@ -8,7 +8,11 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import GradientWash from "../ui/GradientWash";
 
-const HEADLINE_LINES = ["Your property", "journey starts", "with you."];
+const HEADLINE_LINES = [
+  { text: "Your property" },
+  { text: "journey starts" },
+  { text: "with ", highlight: "you." },
+];
 
 const PATHS = [
   { href: "/journey?type=buy", label: "Buy" },
@@ -21,25 +25,20 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <GradientWash />
       <Container className="relative pt-12 sm:pt-16">
-        <motion.p
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-xs font-semibold tracking-[0.25em] text-ink-faint uppercase"
-        >
-          Properties with Kaur
-        </motion.p>
 
         <h1 className="font-display -ml-1 text-[2.7rem] leading-[1.02] font-semibold tracking-tight text-ink sm:text-[4.6rem] lg:text-[6.1rem] xl:text-[6.9rem]">
           {HEADLINE_LINES.map((line, i) => (
             <motion.span
-              key={line}
+              key={line.text}
               className="block"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] }}
             >
-              {line}
+              {line.text}
+              {line.highlight && (
+                <span className="text-gold-600">{line.highlight}</span>
+              )}
             </motion.span>
           ))}
         </h1>
