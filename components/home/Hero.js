@@ -73,19 +73,19 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative h-[420px] w-full overflow-hidden rounded-[28px] sm:h-[480px] lg:h-[600px]"
+          className="relative aspect-video w-full overflow-hidden rounded-[28px]"
         >
           <Image
-            src="/images/hero-villa.jpg"
-            alt="A modern villa exterior, representative of the calibre of homes Properties with Kaur advises on"
+            src="/images/hero-map.jpg"
+            alt="Illustrated map of key Properties with Kaur destinations across Abu Dhabi, Dubai and Ras Al Khaimah"
             fill
             priority
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/35 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent" />
 
-          <div className="absolute top-5 left-5 flex max-w-[230px] items-start gap-3 rounded-2xl bg-ivory/95 p-4 shadow-lg sm:top-7 sm:left-7">
+          <div className="absolute top-5 left-5 hidden max-w-[230px] items-start gap-3 rounded-2xl bg-ivory/95 p-4 shadow-lg sm:top-7 sm:left-7 sm:flex">
             <Lightbulb size={17} strokeWidth={1.7} className="mt-0.5 shrink-0 text-gold-600" />
             <p className="text-xs leading-relaxed font-medium text-ink">
               Dedicated to understanding you first, then finding the right
@@ -101,6 +101,14 @@ export default function Hero() {
             <ArrowUpRight size={24} />
           </Link>
         </motion.div>
+
+        <div className="mt-4 flex items-start gap-3 rounded-2xl bg-ivory/95 p-4 shadow-lg sm:hidden">
+          <Lightbulb size={17} strokeWidth={1.7} className="mt-0.5 shrink-0 text-gold-600" />
+          <p className="text-xs leading-relaxed font-medium text-ink">
+            Dedicated to understanding you first, then finding the right
+            property strategy.
+          </p>
+        </div>
       </Container>
     </section>
   );
