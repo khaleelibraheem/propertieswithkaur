@@ -24,15 +24,15 @@ const COLUMNS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-ivory">
+    <footer className="text-ivory">
       <Container className="py-16 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Image
               src="/logo-dark.png"
               alt="Properties with Kaur"
-              width={933}
-              height={636}
+              width={885}
+              height={448}
               className="h-16 w-auto"
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/60">

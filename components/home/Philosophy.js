@@ -4,7 +4,7 @@ import GradientWash from "../ui/GradientWash";
 
 export default function Philosophy() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
+    <section className="relative overflow-hidden py-24 sm:py-32">
       <GradientWash variant="dark" />
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-20">

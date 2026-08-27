@@ -31,19 +31,19 @@ export default function ContactPage() {
             <ContactForm />
           </Reveal>
 
-          <Reveal delay={0.1} className="rounded-3xl border border-ink/10 bg-ivory-deep p-2">
+          <Reveal delay={0.1} className="rounded-3xl border border-ivory/10 bg-ivory/[0.04] p-2 backdrop-blur-sm">
             {CHANNELS.map((channel, i) => (
               <a
                 key={channel.label}
                 href={channel.href}
-                className={`group flex items-center gap-4 rounded-2xl px-5 py-5 transition-colors duration-200 hover:bg-white ${
-                  i > 0 ? "border-t border-ink/8" : ""
+                className={`group flex items-center gap-4 rounded-2xl px-5 py-5 transition-colors duration-200 hover:bg-ivory/[0.06] ${
+                  i > 0 ? "border-t border-ivory/10" : ""
                 }`}
               >
-                <channel.icon size={20} strokeWidth={1.6} className="shrink-0 text-gold-700" />
+                <channel.icon size={20} strokeWidth={1.6} className="shrink-0 text-gold-300" />
                 <div className="flex-1">
-                  <p className="font-display text-base font-medium text-ink">{channel.label}</p>
-                  <p className="mt-0.5 text-sm text-ink-soft">{channel.value}</p>
+                  <p className="font-display text-base font-medium text-ivory">{channel.label}</p>
+                  <p className="mt-0.5 text-sm text-ivory/60">{channel.value}</p>
                 </div>
               </a>
             ))}

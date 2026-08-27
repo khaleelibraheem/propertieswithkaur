@@ -85,8 +85,15 @@ html {
 }
 
 body {
-  background: var(--color-ivory);
-  color: var(--color-ink);
+  background:
+    radial-gradient(52% 46% at 8% 0%, rgba(84, 42, 128, 0.55), transparent 60%),
+    radial-gradient(50% 42% at 100% 12%, rgba(216, 161, 58, 0.24), transparent 60%),
+    radial-gradient(46% 40% at 22% 100%, rgba(60, 28, 95, 0.4), transparent 65%),
+    radial-gradient(40% 34% at 92% 96%, rgba(216, 161, 58, 0.12), transparent 60%),
+    var(--color-ink);
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--color-ivory);
   font-family: var(--font-sans);
 }
 

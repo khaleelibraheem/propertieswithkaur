@@ -10,8 +10,8 @@ const MotionLink = motion.create(Link);
 const variants = {
   gold: "bg-gold-500 text-ink hover:bg-gold-600 shadow-[0_10px_24px_-12px_rgba(216,161,58,0.6)]",
   dark: "bg-ink text-ivory hover:bg-ink/85 shadow-[0_10px_24px_-12px_rgba(21,19,15,0.45)]",
-  outline: "border border-ink/15 text-ink hover:border-ink/40 hover:bg-ink/[0.03]",
-  ghost: "text-ink hover:text-gold-700",
+  outline: "border border-ivory/25 text-ivory hover:border-ivory/50 hover:bg-ivory/[0.06]",
+  ghost: "text-ivory hover:text-gold-300",
 };
 
 const sizes = {

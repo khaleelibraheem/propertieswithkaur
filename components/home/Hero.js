@@ -23,10 +23,10 @@ const PATHS = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <GradientWash />
+      <GradientWash variant="dark" />
       <Container className="relative pt-12 sm:pt-16">
 
-        <h1 className="font-display -ml-1 text-[2.7rem] leading-[1.02] font-semibold tracking-tight text-ink sm:text-[4.6rem] lg:text-[6.1rem] xl:text-[6.9rem]">
+        <h1 className="font-display -ml-1 text-[2.7rem] leading-[1.02] font-semibold tracking-tight text-ivory sm:text-[4.6rem] lg:text-[6.1rem] xl:text-[6.9rem]">
           {HEADLINE_LINES.map((line, i) => (
             <motion.span
               key={line.text}
@@ -37,7 +37,7 @@ export default function Hero() {
             >
               {line.text}
               {line.highlight && (
-                <span className="text-gold-600">{line.highlight}</span>
+                <span className="text-gold-300">{line.highlight}</span>
               )}
             </motion.span>
           ))}
@@ -47,28 +47,22 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+          className="mt-6 flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between"
         >
           <div>
-            <p className="max-w-sm text-base leading-relaxed text-ink-soft">
+            <p className="max-w-sm text-base leading-relaxed text-ivory/70">
               Tell us what you&apos;re looking to achieve, and we&apos;ll help
               you find the right property strategy.
             </p>
-            <div className="mt-4 flex items-center gap-3 text-sm">
-              {PATHS.map((path, i) => (
-                <span key={path.href} className="flex items-center gap-3">
-                  {i > 0 && <span className="text-ink-faint/50">&middot;</span>}
-                  <Link
-                    href={path.href}
-                    className="font-medium text-ink underline decoration-ink/20 decoration-1 underline-offset-4 transition-colors hover:decoration-gold-500"
-                  >
-                    {path.label}
-                  </Link>
-                </span>
+            <div className="mt-5 flex flex-wrap items-center gap-2.5">
+              {PATHS.map((path) => (
+                <Button key={path.href} href={path.href} variant="outline" size="lg" className="w-full sm:w-[230px]">
+                  {path.label}
+                </Button>
               ))}
             </div>
           </div>
-          <Button href="/journey" variant="gold" size="lg" icon>
+          <Button href="/journey" variant="gold" size="lg" icon className="w-full self-stretch sm:w-auto sm:self-start">
             Start my property journey
           </Button>
         </motion.div>

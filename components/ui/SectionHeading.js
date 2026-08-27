@@ -1,10 +1,10 @@
 import clsx from "clsx";
 
 const accentColors = {
-  gold: "text-gold-700",
-  terracotta: "text-terracotta-600",
-  emerald: "text-emerald-600",
-  purple: "text-purple-700",
+  gold: "text-gold-300",
+  terracotta: "text-terracotta-300",
+  emerald: "text-emerald-500",
+  purple: "text-purple-100",
 };
 
 export default function SectionHeading({
@@ -12,7 +12,6 @@ export default function SectionHeading({
   title,
   description,
   align = "left",
-  tone = "dark",
   accent = "gold",
   className,
 }) {
@@ -25,32 +24,17 @@ export default function SectionHeading({
       )}
     >
       {eyebrow && (
-        <p
-          className={clsx(
-            "mb-3 text-xs font-semibold tracking-[0.2em] uppercase",
-            tone === "dark" ? accentColors[accent] : "text-gold-300"
-          )}
-        >
+        <p className={clsx("mb-3 text-xs font-semibold tracking-[0.2em] uppercase", accentColors[accent])}>
           {eyebrow}
         </p>
       )}
       {title && (
-        <h2
-          className={clsx(
-            "font-display text-4xl leading-[1.08] font-medium tracking-tight sm:text-5xl lg:text-[3.2rem]",
-            tone === "dark" ? "text-ink" : "text-ivory"
-          )}
-        >
+        <h2 className="font-display text-4xl leading-[1.08] font-medium tracking-tight text-ivory sm:text-5xl lg:text-[3.2rem]">
           {title}
         </h2>
       )}
       {description && (
-        <p
-          className={clsx(
-            "mt-5 text-base leading-relaxed sm:text-lg",
-            tone === "dark" ? "text-ink-soft" : "text-ivory/70"
-          )}
-        >
+        <p className="mt-5 text-base leading-relaxed text-ivory/70 sm:text-lg">
           {description}
         </p>
       )}

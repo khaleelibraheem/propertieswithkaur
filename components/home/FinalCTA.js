@@ -12,7 +12,7 @@ export default function FinalCTA({
   secondaryHref = "/contact",
 }) {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 sm:py-28">
+    <section className="relative overflow-hidden py-24 sm:py-28">
       <GradientWash variant="dark" />
       <Container className="relative text-center">
         <Reveal className="mx-auto max-w-2xl">

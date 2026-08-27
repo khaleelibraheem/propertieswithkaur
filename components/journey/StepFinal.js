@@ -46,7 +46,12 @@ export default function StepFinal({ firstName, summaryLine, whatsappHref, onRest
         <Button href="/contact" variant="gold" size="lg" icon>
           Book a private consultation
         </Button>
-        <Button href={whatsappHref} variant="outline" size="lg">
+        <Button
+          href={whatsappHref}
+          variant="outline"
+          size="lg"
+          className="!border-ink/15 !text-ink hover:!border-ink/40 hover:!bg-ink/[0.03]"
+        >
           Continue on WhatsApp
         </Button>
       </div>

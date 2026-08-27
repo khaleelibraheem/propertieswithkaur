@@ -44,26 +44,26 @@ export default function InsightsPage() {
             />
           </div>
 
-          <Reveal className="mt-14 border-t border-ink/10 pt-10">
-            <p className="text-xs font-semibold tracking-[0.2em] text-emerald-700 uppercase">
+          <Reveal className="mt-14 border-t border-ivory/10 pt-10">
+            <p className="text-xs font-semibold tracking-[0.2em] text-emerald-500 uppercase">
               {FEATURED.tag}
             </p>
-            <h2 className="mt-3 max-w-2xl font-display text-2xl leading-snug font-medium text-ink sm:text-3xl">
+            <h2 className="mt-3 max-w-2xl font-display text-2xl leading-snug font-medium text-ivory sm:text-3xl">
               {FEATURED.title}
             </h2>
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-ivory/70">
               {FEATURED.description}
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-10 border-t border-ink/10 pt-10 sm:grid-cols-2">
+          <div className="mt-12 grid gap-10 border-t border-ivory/10 pt-10 sm:grid-cols-2">
             {SECONDARY.map((topic, i) => (
               <Reveal key={topic.title} delay={i * 0.08}>
-                <p className="text-xs font-semibold tracking-[0.2em] text-emerald-700 uppercase">
+                <p className="text-xs font-semibold tracking-[0.2em] text-emerald-500 uppercase">
                   {topic.tag}
                 </p>
-                <h3 className="mt-3 font-display text-xl font-medium text-ink">{topic.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{topic.description}</p>
+                <h3 className="mt-3 font-display text-xl font-medium text-ivory">{topic.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ivory/70">{topic.description}</p>
               </Reveal>
             ))}
           </div>

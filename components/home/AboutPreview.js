@@ -13,21 +13,21 @@ export default function AboutPreview() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-gold-700 uppercase">
+            <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-gold-300 uppercase">
               About Properties with Kaur
             </p>
-            <h2 className="font-display text-4xl leading-[1.1] font-medium tracking-tight text-ink sm:text-5xl">
+            <h2 className="font-display text-4xl leading-[1.1] font-medium tracking-tight text-ivory sm:text-5xl">
               Real estate should feel personal.
             </h2>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink-soft">
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-ivory/70">
               Properties with Kaur communicates a different approach.
               Understand the person first. Then understand the property
               they need.
             </p>
-            <blockquote className="mt-8 border-l-4 border-gold-500 pl-5 font-display text-2xl text-ink">
+            <blockquote className="mt-8 border-l-4 border-gold-500 pl-5 font-display text-2xl text-ivory">
               &ldquo;If my clients grow, I grow.&rdquo;
             </blockquote>
-            <p className="mt-3 text-sm text-ink-faint">
+            <p className="mt-3 text-sm text-ivory/45">
               Simran Kaur, Founder, Properties with Kaur Real Estate L.L.C.
             </p>
             <Button href="/about" variant="outline" className="mt-7" icon>

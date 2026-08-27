@@ -13,7 +13,7 @@ export const metadata = {
 export default function OpportunitiesPage() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-28">
-      <GradientWash />
+      <GradientWash variant="dark" />
       <Container className="relative">
         <SectionHeading
           eyebrow="Curated opportunities"
@@ -24,8 +24,8 @@ export default function OpportunitiesPage() {
 
         <Criteria />
 
-        <Reveal delay={0.2} className="mt-14 rounded-3xl border border-ink/10 bg-ivory-deep p-8 sm:p-10">
-          <p className="max-w-2xl text-lg leading-relaxed text-ink-soft">
+        <Reveal delay={0.2} className="mt-14 rounded-3xl border border-ivory/10 bg-ivory/[0.04] p-8 backdrop-blur-sm sm:p-10">
+          <p className="max-w-2xl text-lg leading-relaxed text-ivory/70">
             Have something specific in mind already? Tell us about it and
             we&apos;ll give you a straight answer on whether it holds up.
           </p>

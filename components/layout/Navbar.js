@@ -46,7 +46,7 @@ function useActiveType(pathname, searchParams) {
 
 function PillNav({ activeType }) {
   return (
-    <nav className="hidden items-center gap-1 rounded-full bg-ink p-1.5 lg:flex">
+    <nav className="hidden items-center gap-1 rounded-full border border-ivory/10 bg-ivory/[0.04] p-1.5 backdrop-blur-sm lg:flex">
       {PILL_LINKS.map((link) => {
         const active = activeType === link.type;
         return (
@@ -102,8 +102,8 @@ function FullMenu({ open, onClose, activeType }) {
             <Image
               src="/logo-dark.png"
               alt="Properties with Kaur"
-              width={933}
-              height={636}
+              width={885}
+              height={448}
               className="h-11 w-auto"
             />
             <button
@@ -271,17 +271,17 @@ export default function Navbar() {
         className={clsx(
           "sticky top-0 z-50 border-b transition-colors duration-300",
           scrolled
-            ? "border-ink/8 bg-ivory/95 backdrop-blur-sm"
-            : "border-transparent bg-ivory",
+            ? "border-ivory/10 bg-ink/80 backdrop-blur-md"
+            : "border-transparent bg-transparent",
         )}
       >
         <Container className="flex h-20 items-center justify-between">
           <Link href="/" className="shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo-dark.png"
               alt="Properties with Kaur"
-              width={933}
-              height={636}
+              width={885}
+              height={448}
               priority
               className="h-11 w-auto sm:h-12"
             />
@@ -293,7 +293,7 @@ export default function Navbar() {
             <a
               href="https://wa.me/"
               aria-label="Message us on WhatsApp"
-              className="hidden h-11 w-11 items-center justify-center rounded-full bg-ink text-ivory transition-transform duration-200 hover:scale-105 sm:flex"
+              className="hidden h-11 w-11 items-center justify-center rounded-full border border-ivory/15 bg-ivory/[0.04] text-ivory transition-transform duration-200 hover:scale-105 sm:flex"
             >
               <MessageCircle size={18} strokeWidth={1.8} />
             </a>
@@ -310,7 +310,7 @@ export default function Navbar() {
 
             <button
               type="button"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/12 text-ink"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-ivory/15 text-ivory"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
               aria-expanded={open}

@@ -232,14 +232,14 @@ export default function JourneyClient() {
   const journeyIntro = type && stepIndex === 0 && !completed ? JOURNEYS[type].intro : null;
 
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-ivory-deep py-14 sm:py-20">
-      {!type && <GradientWash />}
+    <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden py-14 sm:py-20">
+      <GradientWash variant="dark" />
       <Container size="narrow" className="relative">
         {showBack && (
           <button
             type="button"
             onClick={handleBack}
-            className="mb-6 flex items-center gap-1.5 text-sm text-ink-faint transition-colors hover:text-ink"
+            className="mb-6 flex items-center gap-1.5 text-sm text-ivory/50 transition-colors hover:text-ivory"
           >
             <ChevronLeft size={16} /> Back
           </button>
