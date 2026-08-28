@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Hanken_Grotesk, Bricolage_Grotesque } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -18,6 +19,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://propertieswithkaur.com"),
   title: "Properties with Kaur | Property With Purpose",
   description:
     "A private property advisory experience. Tell us what you're looking to achieve and we'll help you find the right property strategy.",
@@ -32,6 +34,7 @@ export default function RootLayout({ children }) {
         </Suspense>
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
