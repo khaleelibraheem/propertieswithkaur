@@ -19,7 +19,6 @@ import { buildSummaryLine, buildInternalProfile, buildWhatsappMessage } from "@/
 import { WHATSAPP_BASE_URL } from "@/lib/contact";
 
 const STORAGE_KEY = "pwk-journey-v1";
-const AUTO_ADVANCE_DELAY = 380;
 const NOT_DECIDED_VALUE = "not-decided";
 
 function isStepValid(step, answers) {
@@ -164,18 +163,6 @@ export default function JourneyClient() {
 
   const handleSingleSelect = (step, option) => {
     setAnswer(step.key, option.value);
-    if (!option.reveal) {
-      window.setTimeout(() => {
-        setDirection(1);
-        setStepIndex((idx) => {
-          if (idx >= totalSteps - 1) {
-            setCompleted(true);
-            return idx;
-          }
-          return idx + 1;
-        });
-      }, AUTO_ADVANCE_DELAY);
-    }
   };
 
   const handleMultiToggle = (step, value) => {
@@ -211,11 +198,9 @@ export default function JourneyClient() {
     [type, completed, answers]
   );
 
-  const whatsappHref = useMemo(() => {
-    if (!type) return WHATSAPP_BASE_URL;
-    const message = buildWhatsappMessage(type, answers);
-    return `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(message)}`;
-  }, [type, answers]);
+  const whatsappHref = type
+    ? `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(buildWhatsappMessage(type, answers))}`
+    : WHATSAPP_BASE_URL;
 
   useEffect(() => {
     if (completed && type) {
@@ -338,22 +323,17 @@ export default function JourneyClient() {
                 )}
               </div>
 
-              {(currentStep.type !== "single" ||
-                answers[currentStep.key] &&
-                  currentStep.options.find((o) => o.value === answers[currentStep.key])
-                    ?.reveal) && (
-                <div className="mt-10 flex justify-end">
-                  <Button
-                    onClick={handleContinue}
-                    variant="dark"
-                    size="md"
-                    icon
-                    className={!valid ? "opacity-50" : undefined}
-                  >
-                    Continue
-                  </Button>
-                </div>
-              )}
+              <div className="mt-10 flex justify-end">
+                <Button
+                  onClick={handleContinue}
+                  variant="dark"
+                  size="md"
+                  icon
+                  className={!valid ? "opacity-50" : undefined}
+                >
+                  Continue
+                </Button>
+              </div>
             </motion.div>
           )}
           </AnimatePresence>

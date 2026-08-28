@@ -3,6 +3,7 @@ import Philosophy from "@/components/home/Philosophy";
 import WhyPWK from "@/components/home/WhyPWK";
 import AboutPreview from "@/components/home/AboutPreview";
 import FinalCTA from "@/components/home/FinalCTA";
+import WhatsAppShortcut from "@/components/home/WhatsAppShortcut";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <WhyPWK />
       <AboutPreview />
       <FinalCTA />
+      <WhatsAppShortcut />
     </>
   );
 }
