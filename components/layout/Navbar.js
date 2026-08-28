@@ -9,7 +9,7 @@ import { Menu, X, MessageCircle, ArrowUpRight } from "lucide-react";
 import clsx from "clsx";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import { WHATSAPP_BASE_URL } from "@/lib/contact";
+import { WHATSAPP_BASE_URL, EMAIL_HREF } from "@/lib/contact";
 
 const PILL_LINKS = [
   { href: "/", type: "home", label: "Home" },
@@ -201,10 +201,7 @@ function FullMenu({ open, onClose, activeType }) {
                   <a href={WHATSAPP_BASE_URL} className="hover:text-ivory">
                     WhatsApp
                   </a>
-                  <a
-                    href="mailto:hello@propertieswithkaur.com"
-                    className="hover:text-ivory"
-                  >
+                  <a href={EMAIL_HREF} className="hover:text-ivory">
                     Email
                   </a>
                   <span>Dubai, United Arab Emirates</span>

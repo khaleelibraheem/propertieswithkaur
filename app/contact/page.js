@@ -3,7 +3,7 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ContactForm from "@/components/contact/ContactForm";
 import Reveal from "@/components/ui/Reveal";
-import { WHATSAPP_BASE_URL, PHONE_HREF } from "@/lib/contact";
+import { WHATSAPP_BASE_URL, PHONE_HREF, EMAIL_HREF } from "@/lib/contact";
 
 export const metadata = {
   title: "Contact | Properties with Kaur",
@@ -13,7 +13,7 @@ export const metadata = {
 const CHANNELS = [
   { icon: MessageCircle, label: "WhatsApp", value: "Fastest way to reach us, usually within the hour", href: WHATSAPP_BASE_URL },
   { icon: Phone, label: "Call", value: "Direct line to the advisory team", href: PHONE_HREF },
-  { icon: Mail, label: "Email", value: "Best for documents and longer questions", href: "mailto:hello@propertieswithkaur.com" },
+  { icon: Mail, label: "Email", value: "Best for documents and longer questions", href: EMAIL_HREF },
 ];
 
 export default function ContactPage() {
