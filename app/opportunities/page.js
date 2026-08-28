@@ -2,7 +2,6 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
-import GradientWash from "@/components/ui/GradientWash";
 import Criteria from "@/components/opportunities/Criteria";
 
 export const metadata = {
@@ -12,9 +11,8 @@ export const metadata = {
 
 export default function OpportunitiesPage() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
-      <GradientWash variant="dark" />
-      <Container className="relative">
+    <section className="py-20 sm:py-28">
+      <Container>
         <SectionHeading
           eyebrow="Curated opportunities"
           title="Opportunities worth looking at."

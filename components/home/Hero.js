@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Lightbulb } from "lucide-react";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import GradientWash from "../ui/GradientWash";
 
 const HEADLINE_LINES = [
   { text: "Your property" },
@@ -23,7 +22,6 @@ const PATHS = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <GradientWash variant="dark" />
       <Container className="relative pt-12 sm:pt-16">
 
         <h1 className="font-display -ml-1 text-[2.7rem] leading-[1.02] font-semibold tracking-tight text-ivory sm:text-[4.6rem] lg:text-[6.1rem] xl:text-[6.9rem]">

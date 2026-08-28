@@ -1,7 +1,6 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Reveal from "../ui/Reveal";
-import GradientWash from "../ui/GradientWash";
 
 export default function FinalCTA({
   title = "What's the right property strategy for you?",
@@ -12,9 +11,8 @@ export default function FinalCTA({
   secondaryHref = "/contact",
 }) {
   return (
-    <section className="relative overflow-hidden py-24 sm:py-28">
-      <GradientWash variant="dark" />
-      <Container className="relative text-center">
+    <section className="py-24 sm:py-28">
+      <Container className="text-center">
         <Reveal className="mx-auto max-w-2xl">
           <h2 className="font-display text-4xl leading-[1.15] font-medium tracking-tight text-ivory sm:text-5xl lg:text-6xl">
             {title}

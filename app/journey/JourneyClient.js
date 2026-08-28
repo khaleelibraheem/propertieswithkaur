@@ -8,7 +8,6 @@ import clsx from "clsx";
 import Container from "@/components/ui/Container";
 import ProgressBar from "@/components/ui/ProgressBar";
 import Button from "@/components/ui/Button";
-import GradientWash from "@/components/ui/GradientWash";
 import IntentScreen from "@/components/journey/IntentScreen";
 import StepSingle from "@/components/journey/StepSingle";
 import StepMulti from "@/components/journey/StepMulti";
@@ -232,9 +231,8 @@ export default function JourneyClient() {
   const journeyIntro = type && stepIndex === 0 && !completed ? JOURNEYS[type].intro : null;
 
   return (
-    <section className="relative min-h-[calc(100vh-5rem)] overflow-hidden py-14 sm:py-20">
-      <GradientWash variant="dark" />
-      <Container size="narrow" className="relative">
+    <section className="min-h-[calc(100vh-5rem)] py-14 sm:py-20">
+      <Container size="narrow">
         {showBack && (
           <button
             type="button"

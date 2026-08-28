@@ -103,10 +103,26 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(58vmax 52vmax at 8% 0%, rgba(84, 42, 128, 0.55), transparent 60%),
-    radial-gradient(56vmax 48vmax at 100% 12%, rgba(216, 161, 58, 0.24), transparent 60%),
-    radial-gradient(52vmax 46vmax at 22% 100%, rgba(60, 28, 95, 0.4), transparent 65%),
-    radial-gradient(46vmax 40vmax at 92% 96%, rgba(216, 161, 58, 0.12), transparent 60%);
+    radial-gradient(80vmax 72vmax at 4% -6%,
+      rgba(84, 42, 128, 0.48) 0%,
+      rgba(84, 42, 128, 0.24) 32%,
+      rgba(84, 42, 128, 0.08) 55%,
+      transparent 80%),
+    radial-gradient(76vmax 66vmax at 104% 6%,
+      rgba(216, 161, 58, 0.2) 0%,
+      rgba(216, 161, 58, 0.09) 30%,
+      rgba(216, 161, 58, 0.03) 52%,
+      transparent 78%),
+    radial-gradient(72vmax 64vmax at 14% 106%,
+      rgba(60, 28, 95, 0.32) 0%,
+      rgba(60, 28, 95, 0.16) 32%,
+      rgba(60, 28, 95, 0.05) 55%,
+      transparent 80%),
+    radial-gradient(66vmax 58vmax at 98% 102%,
+      rgba(216, 161, 58, 0.1) 0%,
+      rgba(216, 161, 58, 0.04) 32%,
+      transparent 72%);
+  background-blend-mode: screen;
 }
 
 ::selection {

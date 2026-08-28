@@ -9,7 +9,6 @@ import { Menu, X, MessageCircle, ArrowUpRight } from "lucide-react";
 import clsx from "clsx";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import GradientWash from "../ui/GradientWash";
 
 const PILL_LINKS = [
   { href: "/", type: "home", label: "Home" },
@@ -78,26 +77,16 @@ function PillNav({ activeType }) {
 }
 
 function FullMenu({ open, onClose, activeType }) {
-  const [washReady, setWashReady] = useState(false);
-
   return (
-    <AnimatePresence onExitComplete={() => setWashReady(false)}>
+    <AnimatePresence>
       {open && (
         <motion.div
           initial={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
           animate={{ clipPath: "circle(150% at calc(100% - 2.5rem) 2.5rem)" }}
           exit={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
           transition={{ duration: 0.55, ease: [0.65, 0, 0.35, 1] }}
-          onAnimationComplete={() => {
-            if (open) setWashReady(true);
-          }}
           className="fixed inset-0 z-[60] flex flex-col overflow-hidden bg-ink text-ivory"
         >
-          {washReady && open && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-              <GradientWash variant="dark" />
-            </motion.div>
-          )}
           <Container className="relative flex h-20 shrink-0 items-center justify-between">
             <Image
               src="/logo-dark.png"

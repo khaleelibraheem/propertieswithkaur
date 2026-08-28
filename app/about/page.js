@@ -1,7 +1,6 @@
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
-import GradientWash from "@/components/ui/GradientWash";
 import FounderMark from "@/components/ui/FounderMark";
 import WhyPWK from "@/components/home/WhyPWK";
 import FinalCTA from "@/components/home/FinalCTA";
@@ -14,9 +13,8 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <GradientWash variant="dark" />
-        <Container className="relative">
+      <section className="py-20 sm:py-28">
+        <Container>
           <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
             <Reveal className="mx-auto w-full max-w-sm">
               <FounderMark />
