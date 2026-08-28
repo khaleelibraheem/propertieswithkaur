@@ -93,7 +93,7 @@ function FullMenu({ open, onClose, activeType }) {
           }}
           className="fixed inset-0 z-[60] flex flex-col overflow-hidden bg-ink text-ivory"
         >
-          {washReady && (
+          {washReady && open && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
               <GradientWash variant="dark" />
             </motion.div>
