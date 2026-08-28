@@ -85,16 +85,28 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(52% 46% at 8% 0%, rgba(84, 42, 128, 0.55), transparent 60%),
-    radial-gradient(50% 42% at 100% 12%, rgba(216, 161, 58, 0.24), transparent 60%),
-    radial-gradient(46% 40% at 22% 100%, rgba(60, 28, 95, 0.4), transparent 65%),
-    radial-gradient(40% 34% at 92% 96%, rgba(216, 161, 58, 0.12), transparent 60%),
-    var(--color-ink);
-  background-attachment: fixed;
-  background-size: cover;
+  background: var(--color-ink);
   color: var(--color-ivory);
   font-family: var(--font-sans);
+}
+
+/* A real fixed-position layer instead of background-attachment: fixed on
+   body — that CSS property is silently ignored on mobile Safari, which
+   makes the gradient stretch across the whole scrollable page instead of
+   staying anchored to the viewport. vmax-based sizing (rather than %)
+   keeps the blob proportions consistent whether the screen is a tall
+   mobile portrait or a wide desktop window. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(58vmax 52vmax at 8% 0%, rgba(84, 42, 128, 0.55), transparent 60%),
+    radial-gradient(56vmax 48vmax at 100% 12%, rgba(216, 161, 58, 0.24), transparent 60%),
+    radial-gradient(52vmax 46vmax at 22% 100%, rgba(60, 28, 95, 0.4), transparent 65%),
+    radial-gradient(46vmax 40vmax at 92% 96%, rgba(216, 161, 58, 0.12), transparent 60%);
 }
 
 ::selection {
