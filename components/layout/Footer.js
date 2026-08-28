@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
+import { WHATSAPP_BASE_URL } from "@/lib/contact";
 
 const COLUMNS = [
   {
@@ -75,7 +76,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://wa.me/" className="hover:text-gold-300">
+                <a href={WHATSAPP_BASE_URL} className="hover:text-gold-300">
                   Continue on WhatsApp
                 </a>
               </li>

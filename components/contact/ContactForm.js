@@ -6,6 +6,7 @@ import { CheckCircle2 } from "lucide-react";
 import TextField from "../ui/TextField";
 import Button from "../ui/Button";
 import Confetti from "../deco/Confetti";
+import { buildContactWhatsappHref } from "@/lib/contact";
 
 const initial = { name: "", email: "", phone: "", message: "" };
 
@@ -24,8 +25,9 @@ export default function ContactForm() {
       setShowErrors(true);
       return;
     }
-    // In production this hands off to the CRM described in the blueprint.
-    console.info("[PWK contact enquiry]", values);
+    // Opened synchronously inside this submit handler so it counts as a
+    // user gesture and isn't blocked as a popup.
+    window.open(buildContactWhatsappHref(values), "_blank", "noopener,noreferrer");
     setSent(true);
   };
 

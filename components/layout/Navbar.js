@@ -9,6 +9,7 @@ import { Menu, X, MessageCircle, ArrowUpRight } from "lucide-react";
 import clsx from "clsx";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
+import { WHATSAPP_BASE_URL } from "@/lib/contact";
 
 const PILL_LINKS = [
   { href: "/", type: "home", label: "Home" },
@@ -197,7 +198,7 @@ function FullMenu({ open, onClose, activeType }) {
 
               <div className="mx-auto mt-10 flex w-full max-w-6xl flex-col gap-6 border-t border-ivory/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ivory/60">
-                  <a href="https://wa.me/" className="hover:text-ivory">
+                  <a href={WHATSAPP_BASE_URL} className="hover:text-ivory">
                     WhatsApp
                   </a>
                   <a
@@ -280,7 +281,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://wa.me/"
+              href={WHATSAPP_BASE_URL}
               aria-label="Message us on WhatsApp"
               className="hidden h-11 w-11 items-center justify-center rounded-full border border-ivory/15 bg-ivory/[0.04] text-ivory transition-transform duration-200 hover:scale-105 sm:flex"
             >

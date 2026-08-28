@@ -15,7 +15,8 @@ import StepTextInput from "@/components/journey/StepTextInput";
 import StepContactForm from "@/components/journey/StepContactForm";
 import StepFinal from "@/components/journey/StepFinal";
 import { JOURNEYS, JOURNEY_TONES, getJourneySteps } from "@/lib/journeyConfig";
-import { buildSummaryLine, buildInternalProfile } from "@/lib/clientProfile";
+import { buildSummaryLine, buildInternalProfile, buildWhatsappMessage } from "@/lib/clientProfile";
+import { WHATSAPP_BASE_URL } from "@/lib/contact";
 
 const STORAGE_KEY = "pwk-journey-v1";
 const AUTO_ADVANCE_DELAY = 380;
@@ -152,6 +153,9 @@ export default function JourneyClient() {
       goTo(stepIndex + 1, 1);
     } else {
       setCompleted(true);
+      // Opened synchronously inside this click handler so it counts as a
+      // user gesture and isn't blocked as a popup.
+      window.open(whatsappHref, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -208,10 +212,9 @@ export default function JourneyClient() {
   );
 
   const whatsappHref = useMemo(() => {
-    if (!type) return "https://wa.me/";
-    const line = buildSummaryLine(type, answers);
-    const message = `Hi Properties with Kaur, I just completed the ${JOURNEYS[type]?.label.toLowerCase()} journey on your site. ${line}`;
-    return `https://wa.me/?text=${encodeURIComponent(message)}`;
+    if (!type) return WHATSAPP_BASE_URL;
+    const message = buildWhatsappMessage(type, answers);
+    return `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(message)}`;
   }, [type, answers]);
 
   useEffect(() => {
