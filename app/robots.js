@@ -1,4 +1,4 @@
-const BASE_URL = "https://propertieswithkaur.com";
+const BASE_URL = "https://propertieswithkaur.vercel.app";
 
 export default function robots() {
   return {

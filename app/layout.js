@@ -19,7 +19,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://propertieswithkaur.com"),
+  metadataBase: new URL("https://propertieswithkaur.vercel.app"),
   title: "Properties with Kaur | Property With Purpose",
   description:
     "A private property advisory experience. Tell us what you're looking to achieve and we'll help you find the right property strategy.",
