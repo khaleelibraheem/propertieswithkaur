@@ -32,8 +32,8 @@ export default function Footer() {
             <Image
               src="/logo-dark.png"
               alt="Properties with Kaur"
-              width={885}
-              height={448}
+              width={917}
+              height={461}
               className="h-16 w-auto"
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/60">

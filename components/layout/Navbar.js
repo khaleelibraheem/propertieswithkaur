@@ -92,8 +92,8 @@ function FullMenu({ open, onClose, activeType }) {
             <Image
               src="/logo-dark.png"
               alt="Properties with Kaur"
-              width={885}
-              height={448}
+              width={917}
+              height={461}
               className="h-11 w-auto"
             />
             <button
@@ -267,8 +267,8 @@ export default function Navbar() {
             <Image
               src="/logo-dark.png"
               alt="Properties with Kaur"
-              width={885}
-              height={448}
+              width={917}
+              height={461}
               priority
               className="h-11 w-auto sm:h-12"
             />
