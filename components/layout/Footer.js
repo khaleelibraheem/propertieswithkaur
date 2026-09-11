@@ -90,10 +90,18 @@ export default function Footer() {
             Property with purpose &middot; Advice with strategy &middot;
             Properties with Kaur
           </p>
-          <p className="text-xs text-ivory/40">
-            &copy; {new Date().getFullYear()} Properties with Kaur Real Estate L.L.C.
-            Founded by Simran Kaur.
-          </p>
+          <div className="flex flex-col items-start gap-3 sm:items-end">
+            <Link
+              href="/privacy-policy"
+              className="text-xs text-ivory/40 hover:text-gold-300"
+            >
+              Privacy Policy
+            </Link>
+            <p className="text-xs text-ivory/40">
+              &copy; {new Date().getFullYear()} Properties with Kaur Real Estate L.L.C.
+              Founded by Simran Kaur.
+            </p>
+          </div>
         </div>
       </Container>
     </footer>
