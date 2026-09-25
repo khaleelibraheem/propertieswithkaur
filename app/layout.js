@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SiteChrome from "@/components/layout/SiteChrome";
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken",
@@ -29,11 +30,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${hankenGrotesk.variable} ${bricolageGrotesque.variable} h-full`}>
       <body className="flex min-h-full flex-col overflow-x-hidden antialiased">
-        <Suspense fallback={<div className="h-20" />}>
-          <Navbar />
-        </Suspense>
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome
+          nav={
+            <Suspense fallback={<div className="h-20" />}>
+              <Navbar />
+            </Suspense>
+          }
+          footer={<Footer />}
+        >
+          {children}
+        </SiteChrome>
         <Analytics />
       </body>
     </html>

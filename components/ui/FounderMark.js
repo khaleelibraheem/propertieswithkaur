@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function FounderMark({ className }) {
+export default function FounderMark({ className, priority = false }) {
   return (
     <div
       className={`relative flex aspect-[4/5] w-full items-end overflow-hidden rounded-[28px] bg-purple-950 ${className || ""}`}
@@ -9,6 +9,7 @@ export default function FounderMark({ className }) {
         src="/images/founder-placeholder.jpg"
         alt="Simran Kaur, Founder of Properties with Kaur"
         fill
+        priority={priority}
         sizes="(min-width: 1024px) 400px, 100vw"
         className="object-cover"
       />

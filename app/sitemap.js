@@ -3,6 +3,7 @@ const BASE_URL = "https://propertieswithkaur.vercel.app";
 const ROUTES = [
   { path: "/", priority: 1 },
   { path: "/journey", priority: 0.9 },
+  { path: "/limited-time-offer", priority: 0.9 },
   { path: "/opportunities", priority: 0.7 },
   { path: "/about", priority: 0.7 },
   { path: "/insights", priority: 0.6 },

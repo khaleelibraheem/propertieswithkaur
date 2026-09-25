@@ -13,8 +13,10 @@ export default function TextField({
   className,
   autoFocus,
   dark = false,
+  ...inputProps
 }) {
   const id = useId();
+  const errorId = `${id}-error`;
 
   return (
     <div className={clsx("w-full", className)}>
@@ -37,6 +39,8 @@ export default function TextField({
         autoFocus={autoFocus}
         onChange={(e) => onChange(e.target.value)}
         aria-invalid={Boolean(error)}
+        aria-describedby={error ? errorId : undefined}
+        {...inputProps}
         className={clsx(
           "w-full rounded-xl border px-4 py-3.5 text-base transition-all duration-200",
           dark
@@ -45,7 +49,11 @@ export default function TextField({
           error ? "border-red-400" : dark ? "border-ivory/15 focus:border-gold-300" : "border-ink/12 focus:border-gold-500"
         )}
       />
-      {error && <p className="mt-1.5 text-xs text-red-500">{error}</p>}
+      {error && (
+        <p id={errorId} className="mt-1.5 text-xs text-red-400">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
